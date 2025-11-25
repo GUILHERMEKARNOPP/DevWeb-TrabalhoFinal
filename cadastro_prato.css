@@ -112,3 +112,50 @@ select {
 .btn-salvar:hover {
     background: #cc3e17;
 }
+
+/* Responsividade */
+
+/* Tablets e celulares grandes */
+@media (max-width: 900px) {
+    .container {
+        padding: 25px;
+        margin: 30px auto;
+    }
+
+    .row {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+/* Celulares médios */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column; /* As duas colunas viram uma coluna */
+        gap: 15px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+}
+
+/* Celulares pequenos */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    .btn-cancelar,
+    .btn-salvar {
+        width: 100%; /* Botões ocupam largura total */
+        text-align: center;
+        padding: 14px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
