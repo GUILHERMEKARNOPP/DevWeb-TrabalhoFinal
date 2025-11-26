@@ -1,0 +1,85 @@
+/* --- FUNDO PADRÃO (Igual ao Login) --- */
+.bg-sabor-arte {
+    background: linear-gradient(to bottom, #fff6f0, #fdeee5);
+    min-height: 100vh;
+    font-family: "Arial", sans-serif;
+}
+
+/* --- ÍCONE DA MARCA (Header) --- */
+.icon-brand-small {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff7a3d, #ff5b2c); /* Seu gradiente laranja */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(255, 100, 50, 0.4);
+}
+
+/* --- CARDS PERSONALIZADOS --- */
+.card-custom {
+    border: none;
+    border-radius: 12px; /* Arredondamento igual ao login */
+    box-shadow: 0px 4px 20px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease;
+    overflow: hidden;
+}
+
+.card-custom:hover {
+    transform: translateY(-5px); /* Efeito de elevação */
+    box-shadow: 0px 8px 25px rgba(0,0,0,0.1);
+}
+
+.card-img-wrapper {
+    height: 180px;
+    overflow: hidden;
+}
+
+.card-img-top {
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+/* --- TEXTOS E PREÇOS --- */
+.price-text {
+    color: #ff5b2c; /* Laranja da marca */
+    font-weight: bold;
+}
+
+/* --- BOTÕES PERSONALIZADOS (Laranja) --- */
+/* Botão Sólido (Adicionar) */
+.btn-orange {
+    background: linear-gradient(135deg, #ff7a3d, #ff5b2c);
+    border: none;
+    box-shadow: 0 3px 10px rgba(255, 120, 60, 0.4);
+    transition: opacity 0.2s;
+}
+
+.btn-orange:hover {
+    opacity: 0.9;
+    color: white; /* Garante que o texto fique branco */
+}
+
+.btn-orange:active {
+    background: #e65100 !important; /* Cor mais escura ao clicar */
+}
+
+/* Botão Outline (Carrinho) */
+.btn-outline-orange {
+    border: 2px solid #ff7a3d;
+    color: #ff7a3d;
+    font-weight: bold;
+    background: transparent;
+}
+
+.btn-outline-orange:hover {
+    background-color: #ff7a3d;
+    color: white;
+}
+
+/* Badge do carrinho */
+.badge.bg-danger {
+    background-color: #ff5b2c !important; /* Força o vermelho a ser o seu laranja mais escuro */
+}
