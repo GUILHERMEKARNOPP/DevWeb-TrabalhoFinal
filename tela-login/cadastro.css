@@ -106,3 +106,56 @@ button:hover {
     text-decoration: none;
 }
 
+/* Responsividade para telas menores (celulares até 480px) */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 20px;
+        height: auto;
+    }
+
+    .card {
+        width: 100%;
+        padding: 28px 20px;
+    }
+
+    .icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .chef-icon {
+        width: 34px;
+        height: 34px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+    }
+
+    label {
+        font-size: 13px;
+        margin-top: 15px;
+    }
+
+    input {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    button {
+        padding: 12px;
+        font-size: 15px;
+    }
+
+    .login {
+        font-size: 13px;
+    }
+}
+
+
