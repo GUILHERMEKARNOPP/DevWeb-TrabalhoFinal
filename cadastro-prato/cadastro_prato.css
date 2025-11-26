@@ -1,0 +1,161 @@
+/*Configurações gerais da página */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #f5eee7;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    margin: 60px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Titulo principal*/
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 26px;
+    color: #333;
+}
+
+/* Label dos campos */
+label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #444;
+}
+
+/* Campos */
+.input-field,
+.textarea,
+select {
+    width: 90%;
+    padding: 12px;
+    margin-top: 6px;
+    margin-bottom: 18px;
+    border-radius: 10px;
+    border: 1px solid #bbb;
+    font-size: 15px;
+    background: #fafafa;
+    display: flex;
+    align-items: center;
+}
+
+/* Descrição */
+.textarea {
+    height: 100px;
+    resize: none;
+}
+
+/* Placeholder */
+.textarea::placeholder {
+    color: #a0a0a0;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+/* Organização em linhas (preço + categoria)  */
+.row {
+    display: flex;
+    gap: 50px;
+}
+
+.row .col {
+    flex: 1; /* Cada coluna ocupa o mesmo espaço */
+}
+
+/* Layout de Linhas do Formulário */
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+/* Botões */
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+/* Botão de cancelar */
+.btn-cancelar {
+    background: #ddd;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+/* Botão de salvar */
+.btn-salvar {
+    background: #e6461a;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+/* Efeito hover ao passar o mouse */
+.btn-salvar:hover {
+    background: #cc3e17;
+}
+
+/* Responsividade */
+
+/* Tablets e celulares grandes */
+@media (max-width: 900px) {
+    .container {
+        padding: 25px;
+        margin: 30px auto;
+    }
+
+    .row {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+/* Celulares médios */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column; /* As duas colunas viram uma coluna */
+        gap: 15px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+}
+
+/* Celulares pequenos */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    .btn-cancelar,
+    .btn-salvar {
+        width: 100%; /* Botões ocupam largura total */
+        text-align: center;
+        padding: 14px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novo Prato</title>
+    <link rel="stylesheet" href="cadastro_prato.css">
+</head>
+<body>
+
+<div class="container"> <!-- Container central que envolve todo o conteúdo -->
+
+    <h1>Novo Prato</h1>
+
+    <label>Nome do Prato *</label> <!-- Campo de texto para o nome do prato -->
+    <input class="input-field" type="text" placeholder="Ex: Lasanha à Bolonhesa">
+
+    <label>Descrição</label> <!-- Campo de descrição do prato -->
+    <textarea class="textarea" placeholder="Descreva os ingredientes e características do prato..."></textarea>
+
+    <div class="row">
+
+        <div class="col"> <!-- Coluna esquerda: Preço -->
+            <label>Preço *</label>
+            <input class="input-field" type="number" step="0.01" placeholder="0.00">
+        </div>
+
+        <div class="col"> <!-- Coluna direita: Categoria -->
+            <label>Categoria *</label>
+            <select class="input-field">
+                <option>Salgado</option>
+                <option>Doce</option>
+                <option>Bebida</option>
+            </select>
+        </div>
+    </div>
+
+    <label>URL da Imagem</label> <!-- Campo para inserir URL de uma imagem -->
+    <input class="input-field" type="text" placeholder="https://exemplo.com/imagem.jpg">
+
+    <div class="buttons">   <!-- Botões de ação -->
+        <button class="btn-cancelar">Cancelar</button>
+        <button class="btn-salvar">Salvar Prato</button>
+    </div>
+
+</div>
+
+</body>
+</html>
