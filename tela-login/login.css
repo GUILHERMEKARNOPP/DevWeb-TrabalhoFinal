@@ -38,3 +38,71 @@ body {
     height: 42px;
     color: white;
 }
+
+/* Título do sistema */
+h2 {
+    font-size: 26px;
+    margin: 0;
+    font-weight: bold;
+    color: #222;
+}
+
+/* Subtítulo ("Entre na sua conta") */
+.subtitle {
+    margin-top: 5px;
+    color: #777;
+    font-size: 14px;
+}
+
+/* Labels dos campos (Email e Senha) */
+label {
+    display: block;
+    text-align: left;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #333;
+    font-size: 14px;
+}
+
+/* Campos de input */
+input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+    background: #faf5f2;
+    font-size: 14px;
+}
+
+/* Botão de Login */
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 25px;
+    background: linear-gradient(135deg, #ff7a3d, #ff5b2c);
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(255, 120, 60, 0.4);
+}
+
+/* Efeito ao passar o mouse no botão */
+button:hover {
+    opacity: 0.9;
+}
+
+/* Texto "Não tem conta?" */
+.cadastro {
+    margin-top: 18px;
+    font-size: 14px;
+}
+
+
+/* Link do cadastro */
+.cadastro a {
+    color: #ff5b2c;
+    text-decoration: none;
+}
