@@ -1,55 +1,81 @@
-/* --- FUNDO PADRÃO (Igual ao Login) --- */
-.bg-sabor-arte {
+/* --- FUNDO GERAL --- */
+.bg-cardapio {
     background: linear-gradient(to bottom, #fff6f0, #fdeee5);
     min-height: 100vh;
     font-family: "Arial", sans-serif;
 }
 
-/* --- ÍCONE DA MARCA (Header) --- */
+/* --- NAVBAR --- */
 .icon-brand-small {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #ff7a3d, #ff5b2c); /* Seu gradiente laranja */
+    background: linear-gradient(135deg, #ff7a3d, #ff5b2c); 
     display: flex;
     justify-content: center;
     align-items: center;
     box-shadow: 0 4px 12px rgba(255, 100, 50, 0.4);
 }
 
-/* --- CARDS PERSONALIZADOS --- */
+/* --- CARDS DE CATEGORIA --- */
+.card-category {
+    background: linear-gradient(135deg, #ff7a3d, #ff5b2c); 
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: center;
+}
+
+.card-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(255, 91, 44, 0.4);
+}
+
+.icon-cat {
+    font-size: 28px;
+}
+
+/* --- CARDS DOS PRATOS --- */
 .card-custom {
     border: none;
-    border-radius: 12px; /* Arredondamento igual ao login */
+    border-radius: 12px;
     box-shadow: 0px 4px 20px rgba(0,0,0,0.05);
-    transition: transform 0.2s ease;
-    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background: white;
 }
 
 .card-custom:hover {
-    transform: translateY(-5px); /* Efeito de elevação */
+    transform: translateY(-5px);
     box-shadow: 0px 8px 25px rgba(0,0,0,0.1);
 }
 
 .card-img-wrapper {
     height: 180px;
     overflow: hidden;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
 }
 
 .card-img-top {
     height: 100%;
+    width: 100%;
     object-fit: cover;
     transition: transform 0.3s;
 }
 
-/* --- TEXTOS E PREÇOS --- */
+/* --- TIPOGRAFIA --- */
+h2, h5 {
+    color: #222;
+}
+
 .price-text {
-    color: #ff5b2c; /* Laranja da marca */
+    color: #ff5b2c;
     font-weight: bold;
 }
 
-/* --- BOTÕES PERSONALIZADOS (Laranja) --- */
-/* Botão Sólido (Adicionar) */
+/* --- BOTÕES PERSONALIZADOS --- */
 .btn-orange {
     background: linear-gradient(135deg, #ff7a3d, #ff5b2c);
     border: none;
@@ -59,14 +85,13 @@
 
 .btn-orange:hover {
     opacity: 0.9;
-    color: white; /* Garante que o texto fique branco */
+    color: white;
 }
 
 .btn-orange:active {
-    background: #e65100 !important; /* Cor mais escura ao clicar */
+    background: #e65100 !important;
 }
 
-/* Botão Outline (Carrinho) */
 .btn-outline-orange {
     border: 2px solid #ff7a3d;
     color: #ff7a3d;
@@ -79,7 +104,6 @@
     color: white;
 }
 
-/* Badge do carrinho */
 .badge.bg-danger {
-    background-color: #ff5b2c !important; /* Força o vermelho a ser o seu laranja mais escuro */
+    background-color: #ff5b2c !important;
 }
