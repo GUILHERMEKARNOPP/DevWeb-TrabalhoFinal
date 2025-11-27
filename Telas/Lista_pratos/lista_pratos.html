@@ -156,14 +156,14 @@
     }
     
     function enableQuantityButtons() {
-        document.querySelectorAll(".btn-increase").forEach(btn => {
+        document.querySelectorAll(".btn-remover").forEach(btn => {
             btn.addEventListener("click", () => {
                 const input = btn.parentElement.querySelector("input");
                 input.value = parseInt(input.value) + 1;
             });
         });
 
-        document.querySelectorAll(".btn-decrease").forEach(btn => {
+        document.querySelectorAll(".btn-adicionar").forEach(btn => {
             btn.addEventListener("click", () => {
                 const input = btn.parentElement.querySelector("input");
                 let val = parseInt(input.value);
