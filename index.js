@@ -76,7 +76,6 @@ app.post('/api/auth/register', async (req, res) => {
       });
     }
 
-    // Faz login automático
     const { data: sessionData, error: loginError } =
       await supabase.auth.signInWithPassword({ email, password });
 
@@ -91,11 +90,25 @@ app.post('/api/auth/register', async (req, res) => {
     });
 
   } catch (error) {
-    res.status(400).json({
+
+    if (error.message.includes("Unable to validate email address")) {
+      return res.status(400).json({
+        error: "O e-mail informado é inválido. Verifique se está no formato correto."
+      });
+    }
+
+    if (error.message.includes("invalid format")) {
+      return res.status(400).json({
+        error: "Formato de e-mail inválido."
+      });
+    }
+
+    return res.status(400).json({
       error: error.message || "Erro no processo de cadastro."
     });
   }
 });
+
 
 
 app.post('/api/auth/login', async (req, res) => {

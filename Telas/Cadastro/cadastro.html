@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = await res.json();
 
             if (res.ok) {
-                mostrarMensagem('Cadastro realizado! Redirecionando...');
+                mostrarMensagem('Cadastro realizado!');
                 if (data.token) {
                     localStorage.setItem('auth_token', data.token);
                 }
