@@ -19,7 +19,6 @@
 
 <body class="bg-cardapio">
 
-    <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top mb-4">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center gap-2" href="#">
@@ -41,8 +40,6 @@
         </div>
     </nav>
 
-
-    <!-- HEADER -->
     <div class="container pb-5">
 
         <div class="text-center mb-5">
@@ -50,10 +47,9 @@
             <p class="text-muted">Veja todos os nossos itens ou navegue por categoria</p>
         </div>
 
-        <!-- CATEGORIAS -->
         <div class="row g-3 mb-5">
             <div class="col-12 col-md-4">
-                <a href="pratos.html" class="text-decoration-none">
+                <a href="#sec-pratos" class="text-decoration-none">
                     <div class="card card-category p-3">
                         <div class="d-flex align-items-center gap-3 justify-content-center">
                             <span class="iconify icon-cat" data-icon="mdi:silverware-fork-knife"></span>
@@ -64,7 +60,7 @@
             </div>
 
             <div class="col-12 col-md-4">
-                <a href="sobremesas.html" class="text-decoration-none">
+                <a href="#sec-sobremesas" class="text-decoration-none">
                     <div class="card card-category p-3">
                         <div class="d-flex align-items-center gap-3 justify-content-center">
                             <span class="iconify icon-cat" data-icon="mdi:cupcake"></span>
@@ -75,7 +71,7 @@
             </div>
 
             <div class="col-12 col-md-4">
-                <a href="bebidas.html" class="text-decoration-none">
+                <a href="#sec-bebidas" class="text-decoration-none">
                     <div class="card card-category p-3">
                         <div class="d-flex align-items-center gap-3 justify-content-center">
                             <span class="iconify icon-cat" data-icon="mdi:glass-cocktail"></span>
@@ -86,17 +82,17 @@
             </div>
         </div>
 
-        <section class="mb-5 pt-4">
+        <section id="sec-pratos" class="mb-5 pt-4">
             <h3 class="fw-bold text-dark section-title">Pratos Principais</h3>
             <div id="list-pratos" class="row g-4"></div>
         </section>
 
-        <section class="mb-5 pt-4">
+        <section id="sec-sobremesas" class="mb-5 pt-4">
             <h3 class="fw-bold text-dark section-title">Sobremesas</h3>
             <div id="list-sobremesas" class="row g-4"></div>
         </section>
 
-        <section class="mb-5 pt-4">
+        <section id="sec-bebidas" class="mb-5 pt-4">
             <h3 class="fw-bold text-dark section-title">Bebidas</h3>
             <div id="list-bebidas" class="row g-4"></div>
         </section>
