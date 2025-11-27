@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Compra - Restaurante</title>
+    <link rel="stylesheet" href="finalizar_compra.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Finalizar Compra</h2>
+
+        <!-- Resumo do Pedido -->
+        <div class="resumo">
+            <h3>Resumo do Pedido</h3>
+            <p><strong>Prato:</strong> Lasanha Bolonhesa</p>
+            <p><strong>Prato:</strong> Pizza Calabresa</p>
+            <p><strong>Prato:</strong> Brownie</p>
+            <p><strong>Prato:</strong> Bolo de Chocolate</p>
+            <p><strong>Prato:</strong> Coxinha</p>
+            <p><strong>Prato:</strong> Refrigerante</p>
+            <p><strong>Bebida:</strong> Coca-Cola 350ml</p>
+            <p><strong>Total:</strong> R$ 42,90</p>
+        </div>
+
+        <!-- Formulário -->
+        <form>
+            <label>Nome:</label>
+            <input type="text" placeholder="Seu nome completo" required>
+
+            <label>Telefone:</label>
+            <input type="text" placeholder="(11) 99999-9999" required>
+
+            <label>Endereço de Entrega:</label>
+            <textarea rows="3" placeholder="Rua, número, bairro..." required></textarea>
+
+            <label>Método de Pagamento:</label>
+            <select required>
+                <option value="">Selecione</option>
+                <option>Dinheiro</option>
+                <option>Cartão de Crédito</option>
+                <option>Cartão de Débito</option>
+                <option>Pix</option>
+            </select>
+
+            <label>Observações:</label>
+            <textarea rows="2" placeholder="Alguma observação? (opcional)"></textarea>
+
+            <button type="submit">Confirmar Pedido</button>
+        </form>
+    </div>
+
+</body>
+</html>
