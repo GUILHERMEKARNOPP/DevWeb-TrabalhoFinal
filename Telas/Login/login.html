@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+</head>
+<body>
+
+<div class="card"> 
+
+    <div class="icon"> 
+        <span class="chef-icon iconify" data-icon="mdi:chef-hat"></span>
+    </div>
+
+    <h2>Sabor & Arte</h2>
+    <p class="subtitle">Entre na sua conta</p>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" placeholder="seu@email.com" required>
+
+    <label for="pass">Senha</label>
+    <input type="password" id="pass" placeholder="••••••••" required>
+
+    <button type="submit">Entrar</button>
+
+    <p class="cadastro">Não tem conta? <a href="../Cadastro/cadastro.html">Cadastre-se</a></p>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const card = document.querySelector('.card');
+    const formButton = card.querySelector('button');
+    const emailInput = card.querySelector('#email');
+    const senhaInput = card.querySelector('#pass');
+    const cadastroParagraph = card.querySelector('.cadastro');
+
+    const mostrarMensagem = (texto, erro = false) => {
+        let msg = card.querySelector('.message');
+        if (!msg) {
+            msg = document.createElement('p');
+            msg.classList.add('message');
+            card.insertBefore(msg, cadastroParagraph);
+        }
+        msg.textContent = texto;
+        msg.style.color = erro ? '#ff5b2c' : '#4CAF50';
+        msg.style.fontWeight = 'bold';
+        msg.style.marginTop = '15px';
+    };
+
+    formButton.addEventListener('click', async (e) => {
+        e.preventDefault();
+
+        const email = emailInput.value.trim();
+        const password = senhaInput.value.trim();
+
+        if (!email || !password) {
+            mostrarMensagem('Por favor, preencha todos os campos.', true);
+            return;
+        }
+
+        formButton.disabled = true;
+        formButton.textContent = 'Entrando...';
+
+        try {
+            const res = await fetch('/api/auth/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password })
+            });
+
+            const data = await res.json();
+
+            if (res.ok) {
+                if (!data.token) {
+                    mostrarMensagem('Email não confirmado. Verifique sua caixa de entrada.', true);
+                    formButton.disabled = false;
+                    formButton.textContent = 'Entrar';
+                    return;
+                }
+                mostrarMensagem('Login realizado com sucesso!');
+                localStorage.setItem('auth_token', data.token);
+                setTimeout(() => {
+                    window.location.href = '../Lista_pratos/lista_pratos.html';
+                }, 1500);
+            } else {
+                let erroMsg = data.error || 'Email ou senha inválidos.';
+                mostrarMensagem(erroMsg, true);
+                formButton.disabled = false;
+                formButton.textContent = 'Entrar';
+            }
+        } catch (err) {
+            console.error('Erro de rede:', err);
+            mostrarMensagem('Erro de conexão. Tente novamente.', true);
+            formButton.disabled = false;
+            formButton.textContent = 'Entrar';
+        }
+    });
+});
+</script>
+
+</body>
+</html>

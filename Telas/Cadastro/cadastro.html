@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="cadastro.css">
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+</head>
+<body>
+
+<div class="card"> 
+
+    <div class="icon"> 
+        <span class="chef-icon iconify" data-icon="mdi:chef-hat"></span>
+    </div>
+
+    <h2>Sabor & Arte</h2>
+    <p class="subtitle">Crie sua conta</p>
+
+        <label for="nome">Nome Completo</label>
+        <input type="text" id="nome" placeholder="Seu nome" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="seu@email.com" required>
+
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" placeholder="••••••••" required>
+
+        <button type="submit">Criar Conta</button>
+
+    <p class="login">Já tem conta? <a href="../Login/login.html">Entre</a></p>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const nome = document.querySelector('#nome');
+    const email = document.querySelector('#email');
+    const senha = document.querySelector('#senha');
+    const botao = document.querySelector('button');
+    const card = document.querySelector('.card');
+
+    const mostrarMensagem = (msg, erro = false) => {
+        let p = card.querySelector('.message');
+        if (!p) {
+            p = document.createElement('p');
+            p.classList.add('message');
+            card.insertBefore(p, card.querySelector('.login'));
+        }
+        p.textContent = msg;
+        p.style.color = erro ? '#ff5b2c' : '#4CAF50';
+        p.style.fontWeight = 'bold';
+        p.style.marginTop = '15px';
+    };
+
+    const traduzirErro = (erro) => {
+        if (!erro) return 'Falha no cadastro.';
+        if (erro.includes('Password should be at least 6 characters')) {
+            return 'A senha deve ter pelo menos 6 caracteres.';
+        }
+        if (erro.includes('already registered')) {
+            return 'Este email já está cadastrado.';
+        }
+        if (erro.includes('Invalid email')) {
+            return 'Email inválido.';
+        }
+        return erro; 
+    };
+
+    botao.addEventListener('click', async (e) => {
+        e.preventDefault();
+
+        if (!nome.value.trim() || !email.value.trim() || !senha.value.trim()) {
+            mostrarMensagem('Preencha todos os campos!', true);
+            return;
+        }
+
+        if (senha.value.trim().length < 6) {
+            mostrarMensagem('A senha deve ter pelo menos 6 caracteres.', true);
+            return;
+        }
+
+        botao.disabled = true;
+        botao.textContent = 'Criando...';
+
+        try {
+            const res = await fetch('/api/auth/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    nome: nome.value.trim(),
+                    email: email.value.trim(),
+                    password: senha.value.trim()
+                })
+            });
+
+            const data = await res.json();
+
+            if (res.ok) {
+                mostrarMensagem('Cadastro realizado! Redirecionando...');
+                if (data.token) {
+                    localStorage.setItem('auth_token', data.token);
+                }
+                setTimeout(() => window.location.href = '../Lista_pratos/lista_pratos.html', 1500);
+            } else {
+                mostrarMensagem(traduzirErro(data.error || data.message), true);
+                botao.disabled = false;
+                botao.textContent = 'Criar Conta';
+            }
+        } catch (err) {
+            console.error(err);
+            mostrarMensagem('Erro de conexão. Tente novamente.', true);
+            botao.disabled = false;
+            botao.textContent = 'Criar Conta';
+        }
+    });
+});
+</script>
+
+
+
+</body>
+</html>
