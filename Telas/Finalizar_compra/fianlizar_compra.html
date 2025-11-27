@@ -28,26 +28,26 @@
 
         <!-- Formulário -->
         <form>
-            <label>Nome:</label>
-            <input type="text" placeholder="Seu nome completo" required>
+            <label for = "Nome" >nome</label>
+            <input id = "nome" type="text" placeholder="Seu nome completo" required>
 
-            <label>Telefone:</label>
-            <input type="text" placeholder="(11) 99999-9999" required>
+            <label for="Telefone"> Telefone:</label>
+            <input id="telefone" type="text" placeholder="(11) 99999-9999" required>
 
-            <label>Endereço de Entrega:</label>
-            <textarea rows="3" placeholder="Rua, número, bairro..." required></textarea>
+            <label for="endereco" >Endereço de Entrega:</label>
+            <textarea id="endereco" rows="3" placeholder="Rua, número, bairro..." required></textarea>
 
-            <label>Método de Pagamento:</label>
-            <select required>
+            <label for="pagamento" >Método de Pagamento:</label>
+            <select id="pagamento" required>
                 <option value="">Selecione</option>
-                <option>Dinheiro</option>
-                <option>Cartão de Crédito</option>
-                <option>Cartão de Débito</option>
-                <option>Pix</option>
+                <option value="Dinheiro">Dinheiro</option>
+                <option value="crédito">Cartão de Crédito</option>
+                <option value="Débito">Cartão de Débito</option>
+                <option value="Pix">Pix</option>
             </select>
 
-            <label>Observações:</label>
-            <textarea rows="2" placeholder="Alguma observação? (opcional)"></textarea>
+            <label for="obs">Observações:</label>
+            <textarea id="obs" rows="2" placeholder="Alguma observação? (opcional)"></textarea>
 
             <button type="submit">Confirmar Pedido</button>
         </form>
