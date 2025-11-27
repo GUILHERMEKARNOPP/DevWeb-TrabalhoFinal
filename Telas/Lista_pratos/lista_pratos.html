@@ -158,20 +158,7 @@
             container.insertAdjacentHTML('beforeend', card);
         });
     }
-
-    function imageName(name) {
-        return name.toLowerCase()
-            .replace(/ç/g, 'c')
-            .replace(/[áàãâ]/g, 'a')
-            .replace(/[éê]/g, 'e')
-            .replace(/[í]/g, 'i')
-            .replace(/[óôõ]/g, 'o')
-            .replace(/[ú]/g, 'u')
-            .replace(/[^a-z0-9 ]/g, '')
-            .replace(/[ ]/g, '_')
-            + ".jpg";
-    }
-
+    
     function enableQuantityButtons() {
         document.querySelectorAll(".btn-increase").forEach(btn => {
             btn.addEventListener("click", () => {
