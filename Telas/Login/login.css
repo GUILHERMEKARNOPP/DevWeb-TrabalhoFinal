@@ -13,10 +13,46 @@ body {
 .card {
     background: white;
     width: 380px;
-    padding: 40px 35px;
+    padding: 50px 50px;
     border-radius: 12px;
     text-align: center;
-    box-shadow: 0px 4px 20px rgba(0,0,0,0.08);
+    box-shadow: 0px 5px 20px rgba(0,0,0,0.08);
+
+    /* CENTRALIZA TODO O FORMULÁRIO */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Ajuste para centralizar labels + inputs */
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centraliza tudo */
+}
+
+/* Labels dos campos (Email e Senha) */
+label {
+    width: 90%;
+    max-width: 300px;
+    text-align: left;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #333;
+    font-size: 14px;
+}
+
+/* Campos de input */
+input {
+    width: 90%;
+    max-width: 300px;
+    padding: 12px;
+    margin-top: 6px;
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+    background: #faf5f2;
+    font-size: 14px;
 }
 
 /* Círculo que envolve o ícone */
@@ -54,30 +90,10 @@ h2 {
     font-size: 14px;
 }
 
-/* Labels dos campos (Email e Senha) */
-label {
-    display: block;
-    text-align: left;
-    margin-top: 20px;
-    font-weight: bold;
-    color: #333;
-    font-size: 14px;
-}
-
-/* Campos de input */
-input {
-    width: 100%;
-    padding: 12px;
-    margin-top: 6px;
-    border: 1px solid #e2e2e2;
-    border-radius: 8px;
-    background: #faf5f2;
-    font-size: 14px;
-}
-
 /* Botão de Login */
 button {
-    width: 100%;
+    width: 90%;
+    max-width: 300px;
     padding: 14px;
     margin-top: 25px;
     background: linear-gradient(135deg, #ff7a3d, #ff5b2c);
@@ -100,7 +116,6 @@ button:hover {
     font-size: 14px;
 }
 
-
 /* Link do cadastro */
 .cadastro a {
     color: #ff5b2c;
@@ -108,7 +123,6 @@ button:hover {
 }
 
 /* Responsividade para telas menores (mobile) */
-  
 @media (max-width: 480px) {
 
     /* Diminuir largura do card no celular */
