@@ -1,14 +1,18 @@
+/* Configuração geral da página */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     margin: 0;
-    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #fff6f0, #fdeee5);
+    font-family: "Arial", sans-serif;
 }
 
 .container {
     width: 90%;
     max-width: 500px;
-    margin: 30px auto;
+    margin: 0 auto;
     background: white;
     padding: 20px;
     border-radius: 10px;
@@ -41,10 +45,12 @@ label {
 
 input, select, textarea {
     width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border-radius: 6px;
+    box-sizing: border-box;
+    padding: 12px;
+    margin-top: 6px;
+    border-radius: 8px;
     border: 1px solid #ccc;
+    background: #faf5f2;
     font-size: 14px;
 }
 
@@ -52,18 +58,73 @@ textarea {
     resize: none;
 }
 
+/* Botão de Confirmar */
 button {
     width: 100%;
-    padding: 12px;
-    background-color: #28a745;
-    color: white;
+    padding: 14px;
+    margin-top: 25px;
+    background: linear-gradient(135deg, #ff7a3d, #ff5b2c);
     border: none;
-    border-radius: 8px;
+    color: white;
     font-size: 16px;
+    border-radius: 8px;
     cursor: pointer;
-    margin-top: 15px;
+    box-shadow: 0 3px 10px rgba(255, 120, 60, 0.4);
 }
 
+/* Efeito ao passar o mouse no botão */
 button:hover {
-    background-color: #218838;
+    opacity: 0.9;
+}
+
+/* Responsividade para telas menores (mobile) */
+  
+@media (max-width: 480px) {
+
+    /* Diminuir largura do card no celular */
+    .card {
+        width: 90%;
+        padding: 25px 20px;
+    }
+
+    /* Ícone menor para caber melhor */
+    .icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .chef-icon {
+        width: 34px;
+        height: 34px;
+    }
+
+    /* Títulos menores */
+    h2 {
+        font-size: 22px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+    }
+
+    /* Labels e inputs mais compactos */
+    label {
+        margin-top: 15px;
+        font-size: 13px;
+    }
+
+    input {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    /* Botão menor */
+    button {
+        padding: 12px;
+        font-size: 15px;
+    }
+
+    .cadastro {
+        font-size: 13px;
+    }
 }
